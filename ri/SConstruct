@@ -1,0 +1,6 @@
+
+
+lib_name = 'grt_ri'
+list = Split('./src/main.c ./src/pmem.c ./src/prettyprint.c ./src/lri.c')
+
+lib = SharedLibrary(target=lib_name, source=list)

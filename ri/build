@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# build sh script
+
+# build the lua->RI interface
+echo 'BUILDING LUA->C INTERFACE...'
+cd src
+pwd
+lua build.lua interface.lua lri
+
+# build the module
+echo 'BUILDING C MODULE...'
+cd ..
+pwd
+scons 
+mv ./libgrt_ri.so ./bin/grt_ri.so
+
+
