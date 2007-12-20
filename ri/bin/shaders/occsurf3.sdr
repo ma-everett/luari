@@ -1,0 +1,28 @@
+#!version 1.5.1
+surface
+#!parameters:
+float	samples	=	64
+float	maxdist	=	1e30
+float	coneangle
+#!variables:
+vector	Ns
+float	occ
+vector	temporary_0
+float	temporary_1
+vector	temporary_2
+float	temporary_3
+#!Init:
+	divff             	coneangle 3.141592654 2
+	return            
+#!Code:
+	normalize	("v=v")  temporary_0  N 
+	faceforward	("v=vv")  Ns  temporary_0  I 
+	vufloat            temporary_1 samples
+	occlusion	("f=pnfSfSf")  occ  P  Ns  temporary_1  "maxdist"  maxdist  "coneangle"  coneangle 
+	vufloat            temporary_3 1
+	subff             	temporary_1 temporary_3 occ
+	vfromf            	temporary_2 temporary_1
+	mulvv             	temporary_0 temporary_2 Cs
+	mulvv             	Ci temporary_0 Os
+	movevv            	Oi Os
+	return            

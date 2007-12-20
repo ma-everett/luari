@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 # build sh script
 
-# build the lua->RI interface
-echo 'BUILDING LUA->C INTERFACE...'
-cd src
-pwd
-lua build.lua interface.lua lri
+echo 'GENERATING RIB LUA INTERFACE...'
+lua ./tools/gen-interface.lua ./interface/interface.lua ./src/rib ./interface/rib-template
+
 
 # build the module
-echo 'BUILDING C MODULE...'
-cd ..
+echo 'BUILDING C++ MODULE...'
 pwd
 scons 
 mv ./libgrt_ri.so ./bin/grt_ri.so

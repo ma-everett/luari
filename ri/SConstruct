@@ -1,6 +1,12 @@
 
+env=Environment(CCFLAGS = "-g")
 
 lib_name = 'grt_ri'
-list = Split('./src/main.c ./src/pmem.c ./src/prettyprint.c ./src/lri.c')
+list = Split( """
+		./src/main.cpp 
+		./src/context.cpp
+		./src/stream.cpp
+		./src/rib.cpp
+		""")
 
-lib = SharedLibrary(target=lib_name, source=list)
+lib = env.SharedLibrary(target=lib_name, source=list)

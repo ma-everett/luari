@@ -1,0 +1,13 @@
+C H A N G E S
+-------------
+
+
+Changes Between 0.1 and 0.2:
+----------------------------
+
+Basically the entire code base has been rewritten, due to the decision to
+implement the module in C++ rather then in C (which was the case for version 
+0.1). This was done to tie in with the rest of the G&RT project. 
+
+The interface has only changed outside of the RI Binding, so this should be
+easy to absorb as changes go. 

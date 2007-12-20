@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 # test sh script
 
-# run the unit test script
-echo 'RUNNING LUA TEST SCRIPT...'
 cd bin
 pwd
-lua ritest.lua
-
-# render the output test rib
-echo 'RENDERING test.rib WITH PIXIE...'
-cd ..
-pwd
-time rndr -p ./bin/test.rib
-
-
+echo 'RENDERING TEST FILE'
+time lua ritest_su.lua | rndr -p
