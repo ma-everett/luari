@@ -1,14 +1,14 @@
-#!version 1.5.1
+#!version 2.2.6
 surface
 #!parameters:
-float	samples	=	64
+uniform	float	samples	=	64
 #!variables:
-vector	Ns
-float	occ
-vector	temporary_0
-float	temporary_1
-vector	temporary_2
-float	temporary_3
+varying	vector	Ns
+varying	float	occ
+varying	vector	temporary_0
+varying	float	temporary_1
+varying	vector	temporary_2
+varying	float	temporary_3
 #!Init:
 	return            
 #!Code:

@@ -57,7 +57,8 @@ int load( lua_State * L )
   luaL_newmetatable(L, "grt_ri");
   lua_pushvalue(L,-1);
   lua_setfield(L,-2,"__index");
-  luaL_register(L,"grt",ril_f);
+  luaL_setfuncs(L,ril_f,0); //lua 5.2
+  // was luaL_register(L,"grt",ril_f); for lua 5.1
 
   return 1;
 }

@@ -1,6 +1,11 @@
 C H A N G E S
 -------------
 
+Changes Between 0.2 and 0.2a:
+-----------------------------
+
+Updated for lua 5.2 API from lua 5.1 API, made some minor cleanups here and
+there. 
 
 Changes Between 0.1 and 0.2:
 ----------------------------

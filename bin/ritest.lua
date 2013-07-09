@@ -31,7 +31,7 @@ ri:Option( "searchpath","shader", ".:./shaders:&")
 ri:Format( 400, 300, 1 )
 ri:PixelSamples( 1, 1 )	
 ri:ShadingInterpolation( "smooth" )
-ri:Display( "output/ritest.tiff", "file", "rgba" )
+ri:Display( "ritest.tiff", "file", "rgba" )
 ri:Projection( "perspective", "fov", 22)
 ri:Exposure( 1.0, 2.2 )
 

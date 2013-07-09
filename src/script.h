@@ -43,7 +43,8 @@ namespace grt
 
 	  lua_pushstring(L, T::className);
 	  lua_pushvalue(L,methods);
-	  lua_settable(L,LUA_GLOBALSINDEX);
+	  lua_pushglobaltable(L);//lua 5.2
+	  //^ was lua_settable(L,LUA_GLOBALSINDEX); for lua 5.1
 	  
 	  lua_pushliteral(L,"__metatable");
 	  lua_pushvalue(L,methods);
@@ -93,7 +94,7 @@ namespace grt
 	  pointer *ud = static_cast<pointer *>(luaL_checkudata(L,narg, T::className));
 
 	  if (!ud) 
-	    luaL_typerror(L,narg,T::className);
+	    luaL_error(L,"typeerror %s",narg,T::className);
 
 	  return ud->ptr;
 	}

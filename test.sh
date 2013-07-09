@@ -4,4 +4,4 @@
 cd bin
 pwd
 echo 'RENDERING TEST FILE'
-time lua ritest_su.lua | rndr -p
+time lua ritest_co.lua | rndr -p

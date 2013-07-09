@@ -50,7 +50,7 @@ producer = coroutine.create( function( )
 
 		ri:FrameBegin( i )
 		
-			ri:Display( "output/ritest_co-0" .. i .. ".tiff", "file", "rgba" )
+			ri:Display( "ritest_co-0" .. i .. ".tiff", "file", "rgba" )
 			ri:Projection( "perspective", "fov", 22)
 			ri:Exposure( 1.0, 2.2 )
 
